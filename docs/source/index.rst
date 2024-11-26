@@ -1,13 +1,5 @@
-Welcome to Lumache's documentation!
-===================================
-
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project. Minor Changes
+Welcome to Hamro Health School's Documentation!
+===============================================
 
 .. note::
 
@@ -16,7 +8,33 @@ how to :ref:`installation` the project. Minor Changes
 Contents
 --------
 
-.. toctree::
+- API Endpoints
+  - General Information
+    - Get Recent Events
 
-   usage
-   api
+API Endpoints
+=============
+
+General Information
+-------------------
+
+### Get Recent Events
+
+**Endpoint**: `/api/general-info/get-recent-events`  
+**Method**: `GET`  
+
+This endpoint retrieves a list of recent events based on the provided parameters.
+
+#### Parameters
+
+- `school_id` *(optional)*: The ID of the school.  
+- `class_id` *(optional)*: The ID of the class.  
+- `form_id` *(optional)*: The ID of the form.  
+
+#### Example Request
+
+```http
+GET /api/general-info/get-recent-events?school_id=1&class_id=10&form_id=2 HTTP/1.1
+Host: yourapi.example.com
+Authorization: Bearer <your_token_here>
+Content-Type: application/json
